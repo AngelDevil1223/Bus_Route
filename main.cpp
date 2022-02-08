@@ -51,25 +51,21 @@ int main(int argc, char **argv)
                 if(blank_flag==2)
                 {
                     fprintf(common_file,"NONE\n");
-//                    printf("%c", tmp);
                     blank_flag = 0;
                 }
                 else
                 {
                 fprintf(common_file,"%c", tmp);
-//                printf("%c", tmp);
                 }
             }
             else
             {
              fprintf(common_file,"%c", tmp);
-//             printf("%c", tmp);
              blank_flag=0;
             }
          }
          }while(tmp!=EOF);
         fprintf(common_file,"\nNEW\n");
-//        printf("\n---------------\n");
         fclose(entry_file);
         }
     fclose(common_file);
@@ -136,12 +132,10 @@ int main(int argc, char **argv)
     	else if ((pos = curr_line.find(" ")) != string::npos) {
 			if(difference(departure, curr_line.substr(0, pos)).compare("0:0")==0 && start_stop.compare(curr_line.substr(pos+1))==0)//finding the difference of 2 times
 			{
-//				cout<<"Start point found!\n";
 				start=1;
 			}
 			else if(end_stop.compare(curr_line.substr(pos+1))==0 && (start==1))//finding the difference of 2 times
 			{
-//				cout<<"End point found!\n\n";
 				res<<"From : "<<start_stop<<"\nTo : "<<end_stop<<"\n";
 				res<<"Line number : "<<route_number<<"\n";
 				stops.push_back(curr_line.substr(pos+1));
@@ -166,7 +160,6 @@ int main(int argc, char **argv)
 		}
 	    else if(curr_line.compare("NEW") == 0)
 		{
-//			cout<<"NEW\n";
 			start=0;
 		}
 		else
